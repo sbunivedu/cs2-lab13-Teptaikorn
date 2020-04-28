@@ -1,0 +1,25 @@
+@startuml
+'http://www.plantuml.com/plantuml
+
+class LinkedBinarySearchTree<T> {
+  +addElement(T element)
+  +T find(T element)
+  +T removeElement(T element)
+}
+
+interface Comparable{
+  +int compareTo(Object o)
+}
+
+Comparable <|-- Element
+Class Element<K, V> {
+  -K key
+  -V value
+  +K getKey()
+  +V getValue()
+  +int compareTo(Object o)
+  +setKey(K key)
+  +setValue(V value)
+}
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+'http://www.plantuml.com/plantuml
+
+interface Set<E> {
+  +boolean isEmpty()
+  +int size()
+  +boolean contains(E element)
+  +boolean add(E element)
+  +boolean remove(E element)
+}
+
+interface Map<K, V> {
+  +boolean isEmpty()
+  +int size()
+  +V put(K key, V value)
+  +V get(K key)
+  +V remove(K key)
+}
+
+@enduml
