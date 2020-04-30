@@ -1,0 +1,51 @@
+ java -cp tree.jar:. TreeMapTester
+test size()
+expect: 9
+got:    9
+test get()
+expect: two
+got:    two
+expect: nine
+got:    nine
+test remove()
+expect: nine
+got:    nine
+expect: null
+got:    null
+ java -cp tree.jar:. TreeSetTester
+test size()
+expect: 10
+got:    10
+test add()
+expect: true
+got:    true
+test contains()
+expect: true
+got:    true
+expect: false
+got:    false
+test remove()
+expect: true
+got:    true
+expect: false
+got:    false
+test size()
+expect: 10
+got:    10
+ java -cp tree.jar:. WordTest
+Enter the name of the file containing the words: huckleberry.txt
+test size()
+expect: 14484
+got:    14484
+test contains()
+expect: true
+got:    true
+expect: true
+got:    true
+expect: true
+got:    true
+expect: false
+got:    false
+expect: true
+got:    true
+ 

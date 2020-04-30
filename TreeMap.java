@@ -1,12 +1,15 @@
 import tree.LinkedBinarySearchTree;
 
 public class TreeMap<K,V> implements Map<K,V>{
-  LinkedBinarySearchTree<Element<K,V>> tree =
-    new LinkedBinarySearchTree<Element<K,V>>();
+  LinkedBinarySearchTree<Element<K,V>> tree = new LinkedBinarySearchTree<Element<K,V>>();
 
   public boolean isEmpty(){
     //TO BE IMPLEMENTED
-    return false;
+    if (tree.size() > 0){
+       return false;
+    }else{
+      return true;
+    }
   }
 
   public int size(){
@@ -33,7 +36,13 @@ public class TreeMap<K,V> implements Map<K,V>{
   // or null if this map contains no mapping for the key.
   public V get(K key){
     //TO BE IMPLEMENTED
-    return null;
+    Element<K,V> element = new Element<K,V>(key, null);
+    Element<K,V> result = tree.find(element);
+    if (result != null){
+      return result.getValue();
+    }else{
+      return null;
+    }
   }
 
   // Removes the mapping for a key from this map if it is present.
@@ -43,6 +52,13 @@ public class TreeMap<K,V> implements Map<K,V>{
     //PRE: key is not null
     //POS: the mapping with the key is removed
     //TO BE IMPLEMENTED
-    return null;
+    Element<K,V> target = new Element<K,V>(key, null);
+    Element<K,V> result = tree.find(target);
+    if ( result != null){
+      tree.removeElement(result);
+      return result.getValue();
+    }else{
+      return null;
+    }
   }
 }

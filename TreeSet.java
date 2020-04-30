@@ -2,16 +2,25 @@ public class TreeSet<E>{
   TreeMap<E,String> map = new TreeMap<E,String>();
 
   public boolean isEmpty(){
-    return true;
+    if (map.size() > 0){
+      return false;
+    }else{
+      return true;
+    }
   }
 
   public int size(){
     // To BE IMPLEMENTED
-    return 0;
+    return map.size();
   }
 
   public boolean contains(E element){
-    return false;
+    Object result = map.get(element);
+    if(result != null){
+      return true;
+    }else{
+      return false;
+    }
   }
 
   // If this set already contains the element, the call leaves the set unchanged
@@ -28,6 +37,11 @@ public class TreeSet<E>{
   // Returns false if the element is not present.
   public boolean remove(E element){
     // TO BE IMPLEMENTED
-    return false;
+    Object result = map.remove(element);
+    if(result != null){
+      return true;
+    }else{
+      return false;
+    } 
   }
 }
